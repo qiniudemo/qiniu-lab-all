@@ -15,7 +15,7 @@ public class GetAntiLeechUrlExample {
 		String encodedFileKey;
 		try {
 			// 考虑到文件名称会有中文，所以需要做urlencode
-			encodedFileKey = URLEncoder.encode(fileKey, "utf-8");
+			encodedFileKey = URLEncoder.encode(fileKey, "utf-8");//.replace("%2F", "/");
 			String urlToSign = String.format("http://img.abc.com/%s", encodedFileKey);
 			// 有效期
 			int duration = 3600;
